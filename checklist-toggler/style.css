@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  /* height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+  padding: 4rem;
+}
+
+ul {
+  list-style: none;
+}
+.todo::before {
+  content: "\2610";
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.todo,.toggler {
+  cursor: pointer;
+}
+.todo.active {
+  text-decoration: line-through;
+  color: #888;
+}
+.todo.active::before {
+  content: "\2611";
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* ----------- toggler -------- */
+
+.toggler::before {
+  content: "\25B6";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+.toggler.active::before{
+    transform: rotate(90deg);
+}
+
+.toggler-target{
+    padding: 0 1rem;
+    display: none;
+}
+.toggler-target.active{
+    display: block;
+}
